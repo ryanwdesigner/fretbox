@@ -1,0 +1,356 @@
+@import "https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css";
+
+.chordbox {   
+    position:relative;
+    background-color:#212121;
+    border-radius: 10px;
+    width: 210px;
+    height: 160px;
+    margin:8px 8px 8px 8px;
+    display:inline-block;
+    vertical-align:top;
+    border: 3px solid transparent;
+}
+
+.chordbox:focus {
+    outline:3px solid #bdbdbd;
+}
+
+#spanners {    
+    background-color: #474e59;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#logo {
+    margin: auto;
+    height: 20px;
+    margin-bottom:20px;
+}
+
+#bigFretboard {
+    position:relative;
+    height: 300px;
+    width:auto;
+    background-color: none;
+    margin: auto;
+    padding-left:30px;
+    padding-right: 30px;
+    padding-top:30px;
+}
+
+#bigFretboardBox {
+    display:block;
+    position:relative;
+    margin: auto;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color:none;
+    overflow: visible;
+}
+
+#bigFretboardBox rect {
+    fill:none;
+    stroke-width: 5px;
+    stroke: #474e59;
+}
+
+#bigFretboardBox text {
+    font-size: 24px;
+    fill: white;
+    font-weight:bold;
+}
+
+.keyName {
+    position: absolute;
+    right: 15; 
+    bottom: 9;
+    color: darkgray;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+#chordList {
+    margin: 0 auto;
+    height: auto;
+    width:100%;
+    text-align: center;
+}
+
+#chordList * {
+    text-align:left;
+}
+
+.pretty {
+    display: block;
+}
+
+#selectedTypes1 {
+    height: 100px;
+    width:50%;
+    position: absolute;
+    top:30px;
+    left: 10px;
+}
+
+#selectedTypes2 {
+    height: 100px;
+    width: 50%;
+    position: absolute;
+    top:30px;
+    right: -10px;
+}
+
+body {
+    width: auto;
+    margin: 0;
+    background-color:#212121;
+    font-family: Nunito;
+    padding: none;
+}
+.chordDiagram {
+    display:block;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0 auto;
+    height: 80px;
+    width: 160px;
+    border: 2px solid #bdbdbd;
+}
+.string {
+    stroke: #bdbdbd;
+    stroke-width: 2;
+    display:block;
+}
+
+.fret {
+    stroke: #bdbdbd;
+    stroke-width: 2;
+    display:block;
+}
+
+[id^=diagramStart]{
+    width:20px;
+    position:absolute;
+    font-size: 8px;
+    color: white;
+    font-weight: bold;
+    left: 35px;
+    bottom: -5px;
+    padding: 0px;
+    text-align:center;
+}
+.diagramStart h1{
+    text-align:center;
+}
+
+.chordName{
+    font-size: 8px;
+    color: white;
+    font-weight: bold;
+    margin-top:-5px;
+    margin-left: 16px;
+    padding-top: 3px;
+    text-transform: uppercase;
+}
+
+.chordName h1 {
+    margin-bottom: 14px;
+}
+
+[id^=drawBox] {
+    position:absolute;
+}
+
+#newChord {
+    margin: 8px 8px 8px 8px;
+    font-size: 8px;
+    text-align:center;
+    position:relative;
+    background-color: #212121;
+    width: 210px;
+    height: 160px;
+    color:white;
+    display:inline-block;
+    border: 3px solid #212121;
+    border-radius:10px;
+}
+
+#newChord select{
+    position:absolute;
+    top:10px;
+    left:43px;
+    height:20px;
+    width: 75px;
+    font-size:11px;
+    background-color:white;
+    border: none;
+    border-radius: 10px;
+}
+
+#addChord{
+    font-weight:bold;
+    position:absolute;
+    margin-top:10px;
+    font-size: 11px;
+    height:20px;
+    margin-left: 18px;
+    border-radius: 10px;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    border: none;
+    background-color: #5816f9;
+    color:white;
+}
+
+#deleteAll {
+    bottom: 10;
+    background-color:#444444;
+    color: white;
+    height: 20px;
+    left: 55;
+    position: absolute;
+    border: none;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+#deleteAll:hover {
+    background-color:#333333;
+}
+
+#addChord:hover {
+    background-color:#734af4;
+}
+
+#newChord label {
+    font-size: 11px;
+    color:key;
+    font-weight:bold;
+    left: 12px;
+    top:12px;
+    position:absolute;
+}
+
+.upButton:disabled {
+    background-color:darkgrey;
+}
+
+.tooltip {
+    position: absolute;
+    right: 20;
+    top: 15;
+    width:100px;
+    height:50px;
+    text-decoration: underline;
+    font-family: Nunito;
+    font-size: 14px;
+    display: inline-block;
+    color: white;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: white;
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px;
+
+    /* Position the tooltip */
+    position: absolute;
+    right: 0;
+    top: 30;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+.tooltipText: hover {
+    visibility: visible;
+}
+
+.mutedStrings {
+    position: absolute;
+    width:20px;
+    margin-top: -4px;
+    margin-left: 8px;
+    font-size: 11px;
+    color: black;
+    font-weight: bold;
+}
+
+.chordButtons {
+    position: absolute;
+    width:93px;
+    right: 10px;
+    top: 9px;
+
+}
+.chordButtons button {
+    background-color:#5816f9;
+    border:none;
+    width: 20px;
+    height: 20px;
+    border-radius:10px;
+    vertical-align: top;
+    fill: white;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+.chordButtons button:hover {
+    background-color:#734af4;
+}
+
+.chordButtons button:hover svg{
+    fill: white;
+}
+
+.chordButtons button:disabled {
+    background-color:darkgrey;
+}
+
+.shuffleIcon{
+    margin-left:-2px;
+}
+
+.upIcon{
+    margin-left:-1px;
+    margin-top:0px;
+}
+
+.downIcon{
+    margin-left:1px;
+    margin-top:0px;
+}
+
+.deleteIcon{
+    margin-left:-1px;
+}
+
+
+button {
+
+}
+
+button:focus {
+    outline:0;
+}
+
